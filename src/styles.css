@@ -1,0 +1,114 @@
+.container {
+  margin-top: 20px;
+}
+
+.app {
+  padding: 20px;
+  padding-bottom: 10px;
+  border-radius: 60px;
+}
+#search-widget {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#search-button {
+  position: relative;
+  margin-left: 5px;
+}
+
+#search-button,
+#current-location-button {
+  position: relative;
+  margin-top: -5px;
+}
+
+#city {
+  color: rgb(41, 140, 140);
+  display: inline-block;
+  margin-left: 26px;
+  padding-top: 10px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-transform: uppercase;
+}
+
+#country {
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: rgb(28, 97, 97);
+  margin-left: 26px;
+}
+
+.today-emoji,
+#today-temp,
+.today-date {
+  margin-left: 26px;
+}
+
+#today-temp,
+.today-emoji {
+  font-size: 80px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.card-header {
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.card-title {
+  font-size: 16px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.card-text.temp {
+  font-size: 50px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.card-text.emoji {
+  font-size: 72px;
+}
+
+.card {
+  margin: 0 auto;
+}
+
+.credit {
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 40px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.card-deck {
+  padding-top: 20px;
+  margin-left: 10px;
+}
+
+#today-date {
+  margin: 0 auto;
+  margin-left: 27px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#conversion {
+  font-size: 10pt;
+  margin-left: 20px;
+  padding: 0;
+}
