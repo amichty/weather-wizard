@@ -22,37 +22,49 @@
   </head>
   <body>
     <img src="media/both.png" />
-    <form id="search-widget">
-      <input
-        type="search"
-        id="search-input"
-        class="input-sm"
-        placeholder="Where are you today?"
-      />
-      <button id="search-button" class="btn btn-primary btn-sm" type="submit">
-        Search
-      </button>
-      <button
-        id="current-location-button"
-        class="btn btn-primary btn-sm"
-        type="button"
-      >
-        Use My Current Location
-      </button>
-    </form>
-    <div id="today">
-      <h1 id="city">TORONTO</h1>
-      <h2 id="country">Canada</h2>
-      <p id="today-date">Today's Date</p>
-      <h1 id="today-temp">21°</h1>
-      <a href="#" id="conversion">Convert to Fahrenheit</a>
+    <div class="row">
+      <div class="col-xl-6">
+        <p id="today-date">Today's Date</p>
+      </div>
+      <div class="col-xl-6">
+        <h1 class="today" id="city">NULL</h1>
+        <h2 id="country">NULL</h2>
+        <form id="search-widget">
+          <input
+            type="search"
+            id="search-input"
+            class="input-sm"
+            placeholder="Where are you today?"
+          />
+          <button
+            id="search-button"
+            class="btn btn-primary btn-sm"
+            type="submit"
+          >
+            Search
+          </button>
+          <button
+            id="current-location-button"
+            class="btn btn-primary btn-sm"
+            type="button"
+          >
+            Use My Current Location
+          </button>
+        </form>
+      </div>
     </div>
-    <p id="credit">
-      <a href="https://github.com/amichty/weather-wizard" target="_blank"
-        >Open-source code</a
-      >
-      by Alex Combot
-    </p>
+    <div class="row">
+      <h1 id="today-temp">00</h1>
+      <a href="#" id="conversion">F</a>
+    </div>
+    <div class="row">
+      <p id="credit">
+        <a href="https://github.com/amichty/weather-wizard" target="_blank"
+          >Open-source code</a
+        >
+        by Alex Combot
+      </p>
+    </div>
   </body>
   <script src="src/index.js"></script>
 </html>

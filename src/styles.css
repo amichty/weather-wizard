@@ -5,24 +5,17 @@ body {
 img {
   position: absolute;
   z-index: 1;
-  height: 95vh;
+  height: 650px;
   display: block;
   margin-left: 300px;
-  margin-top: 5px;
-}
-
-#today {
-  position: fixed;
-  z-index: 3;
-  padding-top: 30px;
-  padding-left: 430px;
+  margin-top: 10px;
 }
 
 #search-widget {
   position: relative;
   z-index: 3;
-  padding-top: 120px;
-  margin-left: 740px;
+  padding: 0;
+  margin-left: 2px;
 }
 
 #search-button {
@@ -39,6 +32,10 @@ img {
 }
 
 #city {
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  margin-top: 78px;
   color: rgb(41, 140, 140);
   display: inline-block;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
@@ -48,35 +45,55 @@ img {
 }
 
 #country {
+  position: relative;
+  z-index: 3;
+  display: inline;
+  padding: 0;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: rgb(28, 97, 97);
 }
 
-#today-temp,
-.today-emoji {
+#today-temp {
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  margin-left: 500px;
+  margin-top: 0;
   font-size: 80px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#credit {
-  text-align: center;
-  margin-bottom: 10px;
-  padding-top: 505px;
+#today-date {
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  display: inline-block;
+  margin-left: 522px;
+  margin-top: 150px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#today-date {
+#credit {
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin: 0 auto;
+  padding-top: 368px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 #conversion {
-  font-size: 10pt;
+  position: relative;
+  z-index: 3;
+  font-size: 30pt;
+  color: #488a8b;
+  margin-left: 30px;
 }
