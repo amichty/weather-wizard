@@ -24,11 +24,15 @@
     <img src="media/both.png" />
     <div class="row">
       <div class="col-xl-6">
-        <p id="today-date">Today's Date</p>
+        <p class="today">
+          <span id="today-date">Today's Date</span>
+          <span id="today-time">Today's Time</span>
+        </p>
       </div>
       <div class="col-xl-6">
-        <h1 class="today" id="city">NULL</h1>
-        <h2 id="country">NULL</h2>
+        <p class="place">
+          <span id="city">NULL</span><span id="country">NULL</span>
+        </p>
         <form id="search-widget">
           <input
             type="search"
@@ -54,9 +58,54 @@
       </div>
     </div>
     <div class="row">
-      <h1 id="today-temp">00</h1>
-      <a href="#" id="conversion">F</a>
+      <div class="container today-data">
+        <p id="today-temp">00</p>
+        <p class="conversion">
+          <a href="#" id="celcius">°C</a> | <a href="#" id="fahrenheit">°F</a>
+        </p>
+        <p id="today-emoji">⛅️</p>
+      </div>
+      <ul class="weather-data">
+        <li>Precipitation: 00%</li>
+        <li>Humidity: 00</li>
+        <li>Wind: 00 mph</li>
+      </ul>
     </div>
+    <div class="row">
+      <div class="card-deck" style="width: 30rem">
+        <div class="card forecast day1">
+          <div class="card-header">01/21</div>
+          <div class="card-body">
+            <h5 class="card-title">19°</h5>
+            <p class="card-text emoji">🌧</p>
+            <p class="card-text">
+              <small class="text-muted">3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card forecast day1">
+          <div class="card-header">01/21</div>
+          <div class="card-body">
+            <h5 class="card-title">19°</h5>
+            <p class="card-text emoji">🌧</p>
+            <p class="card-text">
+              <small class="text-muted">3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card forecast day1">
+          <div class="card-header">01/21</div>
+          <div class="card-body">
+            <h5 class="card-title">19°</h5>
+            <p class="card-text emoji">🌧</p>
+            <p class="card-text">
+              <small class="text-muted">3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
       <p id="credit">
         <a href="https://github.com/amichty/weather-wizard" target="_blank"

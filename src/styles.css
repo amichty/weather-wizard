@@ -3,7 +3,7 @@ body {
 }
 
 img {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   height: 650px;
   display: block;
@@ -11,11 +11,33 @@ img {
   margin-top: 10px;
 }
 
+.place {
+  position: fixed;
+  z-index: 3;
+  margin-top: 90px;
+  margin-left: 20px;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#city {
+  font-size: 24pt;
+  color: rgb(41, 140, 140);
+}
+
+#country {
+  font-size: 14pt;
+  color: #1c6161;
+  text-transform: uppercase;
+}
+
 #search-widget {
-  position: relative;
+  position: fixed;
   z-index: 3;
   padding: 0;
-  margin-left: 2px;
+  margin-top: 138px;
+  margin-left: 22px;
 }
 
 #search-button {
@@ -31,69 +53,104 @@ img {
   color: #0b4963;
 }
 
-#city {
-  position: relative;
+.today {
+  position: fixed;
   z-index: 3;
-  padding: 0;
-  margin-top: 78px;
-  color: rgb(41, 140, 140);
-  display: inline-block;
+  margin-top: 130px;
+  margin-left: 500px;
+  font-size: 16pt
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
 }
 
-#country {
-  position: relative;
-  z-index: 3;
-  display: inline;
-  padding: 0;
-  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  color: rgb(28, 97, 97);
+#today-time {
+  color: #488a8b;
+}
+
+.today-data { 
+  position:relative;
+  z-index: 2;
+  height: 200px;
+  width: 300px;
+  margin-top: 100px;
+  margin-left: 420px;
 }
 
 #today-temp {
-  position: relative;
+  position: absolute;
+  z-index: 3;
+  padding: 0px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 80pt;
+  color: #488a8b;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} 
+
+#today-emoji {
+  position: absolute;
+  z-index: 3;
+  margin-top: 20px;
+  margin-left: 170px;
+  font-size: 72pt;
+}
+
+.conversion {
+  position: absolute;
+  z-index: 3;
+  margin-left: 90px;
+  margin-top: 80px;
+  font-size: 16pt;
+}
+
+.weather-data {
+  position: fixed;
   z-index: 3;
   padding: 0;
-  margin-left: 500px;
-  margin-top: 0;
-  font-size: 80px;
+  margin-top: 260px;
+  margin-left: 430px;
+  list-style-type: none;
+  font-size: 12pt;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#today-date {
-  position: relative;
-  z-index: 3;
-  padding: 0;
-  display: inline-block;
-  margin-left: 522px;
-  margin-top: 150px;
-  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+#divider {
+  color: #488a8b;
 }
 
+#fahrenheit {
+  color: #488a8b;
+}
+
+
+.card-deck {
+  position: fixed;
+  z-index: 4;
+  margin-top: 20px;
+  margin-left: 540px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20pt;
+}
+
+.emoji {
+  text-align: center;
+  font-size: 30pt;
+}
 #credit {
-  position: relative;
+  position: fixed;
   z-index: 3;
   display: block;
-  margin: 0 auto;
-  padding-top: 368px;
+  margin-right: 100px;
+  margin-top: 650px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-#conversion {
-  position: relative;
-  z-index: 3;
-  font-size: 30pt;
-  color: #488a8b;
-  margin-left: 30px;
 }

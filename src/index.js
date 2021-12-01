@@ -1,20 +1,26 @@
 function date(today) {
   let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
   let date = today.getDate();
+  if (date < 10) {
+    date = `0${date}`;
+  }
   let month = months[today.getMonth()];
   let hours = today.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
   let minutes = today.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
 
-  let currentDay = `${month}/${date} ${hours}:${minutes}`;
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  let currentDay = `${month}/${date}`;
+  let currentTime = `${hours}:${minutes}${ampm}`;
 
   let todayDate = document.querySelector("#today-date");
   todayDate.innerHTML = `${currentDay}`;
+
+  let todayTime = document.querySelector("#today-time");
+  todayTime.innerHTML = `${currentTime}`;
 }
 
 let today = new Date();
@@ -45,11 +51,15 @@ function displayCity(response) {
   let city = `${response.data.name}`;
   let country = `${response.data.sys.country}`;
   let temp = `${response.data.main.temp}`;
+
   cityName.innerHTML = `${city}`;
-  tempValue.innerHTML = Math.round(`${temp}`) + "°";
+  tempValue.innerHTML = Math.round(`${temp}`);
+  if (temp > -9 && temp < 10) {
+    tempValue.innerHTML = `\xa0` + Math.round(`${temp}`);
+  }
 
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
-  countryName.innerHTML = regionNames.of(`${country}`);
+  countryName.innerHTML = `\xa0` + regionNames.of(`${country}`);
 }
 
 function currentPosition() {
@@ -81,15 +91,15 @@ function showPosition(position) {
 //function convertToC() {
 // let temp = document.querySelector("#today-temp");
 //  temp.innerHTML =
-//   ((Math.round(`${temp.innerHTML.substr(2)}`) - 32) * 5) / 9 + "°";
-// let convertLink = document.querySelector("#conversion");
+//   ((Math.round(`${temp.innerHTML.substr(2)}`) - 32) * 5) / 9;
+// let convertLink = document.querySelector("#celcius");
 // convertLink.innerHTML = "Convert to Fahrenheit";
 //}
 
 //function convertToFa() {
 //  let temp = document.querySelector("#today-temp");
 // temp.innerHTML =
-//    (Math.round(`${temp.innerHTML.substr(0, 1)}`) * 9) / 5 + 32 + "°";
-//  let convertLink = document.querySelector("#conversion");
+//    (Math.round(`${temp.innerHTML.substr(0, 1)}`) * 9) / 5 + 32;
+//  let convertLink = document.querySelector("#fahrenheit");
 // convertLink.innerHTML = "Convert to Celcius";
 //}
