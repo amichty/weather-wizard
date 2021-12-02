@@ -48,15 +48,16 @@ function displayCity(response) {
   let cityName = document.querySelector("#city");
   let countryName = document.querySelector("#country");
   let tempValue = document.querySelector("#today-temp");
+  let todayIcon = document.querySelector("#today-icon");
+  let precipitationValue = document.querySelector("#precipitation");
+  let humidityValue = document.querySelector("#humidity");
+  let windValue = document.querySelector("#wind");
   let city = `${response.data.name}`;
   let country = `${response.data.sys.country}`;
   let temp = `${response.data.main.temp}`;
 
   cityName.innerHTML = `${city}`;
   tempValue.innerHTML = Math.round(`${temp}`);
-  if (temp > -9 && temp < 10) {
-    tempValue.innerHTML = `\xa0` + Math.round(`${temp}`);
-  }
 
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
   countryName.innerHTML = `\xa0` + regionNames.of(`${country}`);
@@ -80,26 +81,24 @@ function showPosition(position) {
   axios.get(`${apiURL}`).then(displayCity);
 }
 
-//let convertLink = document.querySelector("#conversion");
-//if (convertLink.innerHTML === "Convert to Fahrenheit") {
-//  convertLink.addEventListener("click", convertToFa);
-//}
-//if (convertLink.innerHTML === "Convert to Celcius") {
-//  convertLink.addEventListener("click", convertToC);
-//}
+function convertToFa(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#today-temp");
+  temp.innerHTML = Math.round((Math.round(`${temp.innerHTML}`) * 9) / 5 + 32);
+  faLink.classList.add("disabled-link");
+  celLink.classList.remove("disabled-link");
+}
 
-//function convertToC() {
-// let temp = document.querySelector("#today-temp");
-//  temp.innerHTML =
-//   ((Math.round(`${temp.innerHTML.substr(2)}`) - 32) * 5) / 9;
-// let convertLink = document.querySelector("#celcius");
-// convertLink.innerHTML = "Convert to Fahrenheit";
-//}
+let faLink = document.querySelector("#fahrenheit");
+faLink.addEventListener("click", convertToFa);
 
-//function convertToFa() {
-//  let temp = document.querySelector("#today-temp");
-// temp.innerHTML =
-//    (Math.round(`${temp.innerHTML.substr(0, 1)}`) * 9) / 5 + 32;
-//  let convertLink = document.querySelector("#fahrenheit");
-// convertLink.innerHTML = "Convert to Celcius";
-//}
+function convertToCel(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#today-temp");
+  temp.innerHTML = Math.round((Math.round(`${temp.innerHTML}`) - 32) * (5 / 9));
+  celLink.classList.add("disabled-link");
+  faLink.classList.remove("disabled-link");
+}
+
+let celLink = document.querySelector("#celcius");
+celLink.addEventListener("click", convertToCel);

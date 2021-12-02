@@ -61,43 +61,65 @@
       <div class="container today-data">
         <p id="today-temp">00</p>
         <p class="conversion">
-          <a href="#" id="celcius">°C</a> | <a href="#" id="fahrenheit">°F</a>
+          <a href="#" id="celcius" class="disabled-link">°C</a>
+          |
+          <a href="#" id="fahrenheit">°F</a>
         </p>
-        <p id="today-emoji">⛅️</p>
+        <img
+          id="today-icon"
+          class="icon"
+          src="https://openweathermap.org/img/wn/10d@2x.png"
+          alt="Current weather icon"
+        />
       </div>
       <ul class="weather-data">
-        <li>Precipitation: 00%</li>
-        <li>Humidity: 00</li>
-        <li>Wind: 00 mph</li>
+        <li id="precipitation">Precipitation: 00%</li>
+        <li id="humidity">Humidity: 00</li>
+        <li id="wind">Wind: 00 mph</li>
       </ul>
     </div>
     <div class="row">
       <div class="card-deck" style="width: 30rem">
-        <div class="card forecast day1">
+        <div class="card day1">
           <div class="card-header">01/21</div>
           <div class="card-body">
             <h5 class="card-title">19°</h5>
-            <p class="card-text emoji">🌧</p>
+            <img
+              class="img-fluid icon"
+              id="day1-icon"
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt="Current weather icon"
+            />
             <p class="card-text">
               <small class="text-muted">3 mins ago</small>
             </p>
           </div>
         </div>
-        <div class="card forecast day1">
+        <div class="card day2">
           <div class="card-header">01/21</div>
           <div class="card-body">
             <h5 class="card-title">19°</h5>
-            <p class="card-text emoji">🌧</p>
+            <img
+              id="day2-icon"
+              class="img-fluid icon"
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt="Current weather icon"
+            />
             <p class="card-text">
               <small class="text-muted">3 mins ago</small>
             </p>
           </div>
         </div>
-        <div class="card forecast day1">
+        <div class="card day3">
           <div class="card-header">01/21</div>
           <div class="card-body">
             <h5 class="card-title">19°</h5>
-            <p class="card-text emoji">🌧</p>
+            <img
+              id="day3-icon icon"
+              class="img-fluid icon"
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt="Current weather icon"
+            />
             <p class="card-text">
               <small class="text-muted">3 mins ago</small>
             </p>

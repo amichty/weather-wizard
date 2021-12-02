@@ -81,21 +81,27 @@ img {
   position: absolute;
   z-index: 3;
   padding: 0px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 80pt;
+  margin-top: 55px;
+  text-align: right;
+  font-size: 60pt;
   color: #488a8b;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#today-emoji {
+#today-icon {
   position: absolute;
   z-index: 3;
-  margin-top: 20px;
-  margin-left: 170px;
-  font-size: 72pt;
+  margin-top: 50px;
+  margin-left: 150px;
+  width: 100px;
+  height: 100px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
 }
 
 .conversion {
@@ -120,10 +126,6 @@ img {
 }
 
 #divider {
-  color: #488a8b;
-}
-
-#fahrenheit {
   color: #488a8b;
 }
 
@@ -152,4 +154,14 @@ img {
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.disabled-link {
+  color: black;
+  cursor: default;
+}
+
+.disabled-link:hover {
+  text-decoration: none;
+  color: black;
 }
