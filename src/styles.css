@@ -82,6 +82,7 @@ img {
   z-index: 3;
   padding: 0px;
   margin-top: 55px;
+  display: inline;
   text-align: right;
   font-size: 60pt;
   color: #488a8b;
@@ -123,6 +124,10 @@ img {
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.weather-data .title {
+  color: #488a8b;
 }
 
 #divider {

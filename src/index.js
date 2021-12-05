@@ -10,7 +10,7 @@ function date(today) {
 
   let ampm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
+  hours = hours ? hours : 12;
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
   let currentDay = `${month}/${date}`;
@@ -49,18 +49,36 @@ function displayCity(response) {
   let countryName = document.querySelector("#country");
   let tempValue = document.querySelector("#today-temp");
   let todayIcon = document.querySelector("#today-icon");
-  let precipitationValue = document.querySelector("#precipitation");
-  let humidityValue = document.querySelector("#humidity");
-  let windValue = document.querySelector("#wind");
+  let humidityValue = document.querySelector("#hvalue");
+  let windValue = document.querySelector("#wvalue");
+  let sunsetValue = document.querySelector("#svalue");
   let city = `${response.data.name}`;
   let country = `${response.data.sys.country}`;
-  let temp = `${response.data.main.temp}`;
+  let temp = Math.round(`${response.data.main.temp}`);
+  let icon = `${response.data.weather[0].icon}`;
+  let wind = Math.round(`${response.data.wind.speed}`);
+  let humidity = Math.round(`${response.data.main.humidity}`);
+  let sunset = `${response.data.sys.sunset}`;
 
   cityName.innerHTML = `${city}`;
-  tempValue.innerHTML = Math.round(`${temp}`);
-
+  tempValue.innerHTML = `${temp}`;
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
   countryName.innerHTML = `\xa0` + regionNames.of(`${country}`);
+  todayIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  windValue.innerHTML = " " + `${wind}mph`;
+  humidityValue.innerHTML = " " + `${humidity}`;
+
+  let unix_timestamp = `${sunset}`;
+  let date = new Date(unix_timestamp * 1000);
+  let hours = date.getHours();
+  let minutes = "0" + date.getMinutes();
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  let formattedSunset = hours + ":" + minutes.substr(-2) + `${ampm}`;
+
+  sunsetValue.innerHTML = " " + `${formattedSunset}`;
 }
 
 function currentPosition() {
