@@ -52,6 +52,7 @@ function displayCity(response) {
   let humidityValue = document.querySelector("#hvalue");
   let windValue = document.querySelector("#wvalue");
   let sunsetValue = document.querySelector("#svalue");
+  let descriptionValue = document.querySelector("#today-description");
   let city = `${response.data.name}`;
   let country = `${response.data.sys.country}`;
   let temp = Math.round(`${response.data.main.temp}`);
@@ -59,6 +60,7 @@ function displayCity(response) {
   let wind = Math.round(`${response.data.wind.speed}`);
   let humidity = Math.round(`${response.data.main.humidity}`);
   let sunset = `${response.data.sys.sunset}`;
+  let description = `${response.data.weather[0].description}`;
 
   cityName.innerHTML = `${city}`;
   tempValue.innerHTML = `${temp}`;
@@ -66,7 +68,7 @@ function displayCity(response) {
   countryName.innerHTML = `\xa0` + regionNames.of(`${country}`);
   todayIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
   windValue.innerHTML = " " + `${wind}mph`;
-  humidityValue.innerHTML = " " + `${humidity}`;
+  humidityValue.innerHTML = " " + `${humidity}%`;
 
   let unix_timestamp = `${sunset}`;
   let date = new Date(unix_timestamp * 1000);
@@ -79,6 +81,7 @@ function displayCity(response) {
   let formattedSunset = hours + ":" + minutes.substr(-2) + `${ampm}`;
 
   sunsetValue.innerHTML = " " + `${formattedSunset}`;
+  descriptionValue.innerHTML = `${description}`;
 }
 
 function currentPosition() {
