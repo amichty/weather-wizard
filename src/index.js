@@ -82,6 +82,10 @@ function displayCity(response) {
 
   sunsetValue.innerHTML = " " + `${formattedSunset}`;
   descriptionValue.innerHTML = `${description}`;
+
+  let searchField = document.querySelector("#search-input");
+  searchField.value = "";
+  searchField.placeholder = "Where are you today?";
 }
 
 function currentPosition() {

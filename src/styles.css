@@ -14,7 +14,7 @@ img.background-image {
 .place {
   position: fixed;
   z-index: 3;
-  margin-top: 90px;
+  margin-top: 58px;
   margin-left: 20px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -35,29 +35,30 @@ img.background-image {
 #search-widget {
   position: fixed;
   z-index: 3;
-  padding: 0;
-  margin-top: 138px;
+  padding: 0px;
+  margin-top: 105px;
   margin-left: 22px;
 }
 
-#search-button {
-  position: relative;
-  margin-left: 5px;
+#current-location-button {
+  margin-left: 10px;
 }
-
 #search-button,
 #current-location-button {
   position: relative;
-  margin-top: -5px;
+  margin-top: 5px;
   background-color: #b9d5e1;
   color: #0b4963;
+  padding: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .today {
   position: fixed;
   z-index: 3;
   margin-top: 130px;
-  margin-left: 500px;
+  margin-left: 490px;
   font-size: 16pt;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -102,16 +103,20 @@ img.background-image {
 
 .today-icon p {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 3;
-  color: #000000;
+}
+
+.today-icon:hover {
+  cursor: pointer;
 }
 .today-icon:hover p {
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
+  width: 100px;
   margin-top: 130px;
-  margin-left: 140px;
-  cursor: pointer;
+  margin-left: 136px;
+  text-align: center;
 }
 
 .conversion {
@@ -147,7 +152,7 @@ img.background-image {
   position: fixed;
   z-index: 4;
   margin-top: 20px;
-  margin-left: 540px;
+  margin-left: 530px;
 }
 
 .card {
@@ -162,12 +167,15 @@ img.background-image {
 #credit {
   position: fixed;
   z-index: 3;
-  display: block;
-  margin-right: 100px;
-  margin-top: 650px;
+  bottom: 0;
+  margin-left: 10px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#credit:hover {
+  cursor: pointer;
 }
 
 .disabled-link {
