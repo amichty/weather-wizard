@@ -2,20 +2,28 @@ body {
   background-color: azure;
 }
 
-img.background-image {
-  position: fixed;
-  z-index: 1;
-  display: block;
-  height: 650px;
-  margin-top: 20px;
-  margin-left: 300px;
+.wizard-container {
+  max-width: 830px;
+  margin: 0 auto;
+}
+
+.image-container {
+  position: relative;
+}
+
+#background-image {
+  position: absolute;
+  z-index: -999;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.row-2 {
+  padding-right: 130px;
 }
 
 .place {
-  position: fixed;
-  z-index: 3;
-  margin-top: 58px;
-  margin-left: 20px;
+  float: right;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -32,12 +40,19 @@ img.background-image {
   text-transform: uppercase;
 }
 
+.today-data-container {
+  max-width: 200px;
+}
+
+.today {
+  font-size: 16pt;
+  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 #search-widget {
-  position: fixed;
-  z-index: 3;
-  padding: 0px;
-  margin-top: 105px;
-  margin-left: 22px;
+  float: right;
 }
 
 #current-location-button {
@@ -45,7 +60,6 @@ img.background-image {
 }
 #search-button,
 #current-location-button {
-  position: relative;
   margin-top: 5px;
   background-color: #b9d5e1;
   color: #0b4963;
@@ -54,36 +68,11 @@ img.background-image {
   padding-right: 5px;
 }
 
-.today {
-  position: fixed;
-  z-index: 3;
-  margin-top: 130px;
-  margin-left: 490px;
-  font-size: 16pt;
-  font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
 #today-time {
   color: #488a8b;
 }
 
-.today-data {
-  position: relative;
-  z-index: 2;
-  height: 200px;
-  width: 300px;
-  margin-top: 100px;
-  margin-left: 420px;
-}
-
 #today-temp {
-  position: absolute;
-  z-index: 3;
-  padding: 0px;
-  margin-top: 55px;
-  display: inline-block;
   text-align: right;
   font-size: 60pt;
   color: #488a8b;
@@ -93,18 +82,13 @@ img.background-image {
 }
 
 #today-icon {
-  position: absolute;
-  z-index: 3;
-  margin-top: 60px;
-  margin-left: 150px;
   width: 100px;
   height: 100px;
 }
 
 .today-icon p {
+  position: absolute;
   display: none;
-  position: fixed;
-  z-index: 3;
 }
 
 .today-icon:hover {
@@ -114,25 +98,14 @@ img.background-image {
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
   width: 100px;
-  margin-top: 130px;
-  margin-left: 136px;
   text-align: center;
 }
 
 .conversion {
-  position: absolute;
-  z-index: 3;
-  margin-left: 90px;
-  margin-top: 80px;
   font-size: 16pt;
 }
 
 .weather-data {
-  position: fixed;
-  z-index: 3;
-  padding: 0;
-  margin-top: 260px;
-  margin-left: 430px;
   list-style-type: none;
   font-size: 12pt;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,
@@ -149,10 +122,7 @@ img.background-image {
 }
 
 .card-deck {
-  position: fixed;
-  z-index: 4;
-  margin-top: 20px;
-  margin-left: 530px;
+  float: right;
 }
 
 .card {
@@ -165,8 +135,6 @@ img.background-image {
 }
 
 #credit {
-  position: fixed;
-  z-index: 3;
   bottom: 0;
   margin-left: 10px;
   font-family: "Karla", sans-serif, -apple-system, BlinkMacSystemFont,

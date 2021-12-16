@@ -51,7 +51,6 @@ function displayCity(response) {
   let todayIcon = document.querySelector("#today-icon");
   let humidityValue = document.querySelector("#hvalue");
   let windValue = document.querySelector("#wvalue");
-  let sunsetValue = document.querySelector("#svalue");
   let descriptionValue = document.querySelector("#today-description");
   let city = `${response.data.name}`;
   let country = `${response.data.sys.country}`;
@@ -59,7 +58,6 @@ function displayCity(response) {
   let icon = `${response.data.weather[0].icon}`;
   let wind = Math.round(`${response.data.wind.speed}`);
   let humidity = Math.round(`${response.data.main.humidity}`);
-  let sunset = `${response.data.sys.sunset}`;
   let description = `${response.data.weather[0].description}`;
 
   cityName.innerHTML = `${city}`;
@@ -69,18 +67,6 @@ function displayCity(response) {
   todayIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
   windValue.innerHTML = " " + `${wind}mph`;
   humidityValue.innerHTML = " " + `${humidity}%`;
-
-  let unix_timestamp = `${sunset}`;
-  let date = new Date(unix_timestamp * 1000);
-  let hours = date.getHours();
-  let minutes = "0" + date.getMinutes();
-  let ampm = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12;
-  hours = hours ? hours : 12;
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  let formattedSunset = hours + ":" + minutes.substr(-2) + `${ampm}`;
-
-  sunsetValue.innerHTML = " " + `${formattedSunset}`;
   descriptionValue.innerHTML = `${description}`;
 
   let searchField = document.querySelector("#search-input");

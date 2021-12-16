@@ -21,47 +21,55 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <img class="background-image" src="media/both.png" />
-    <div class="row">
-      <div class="col-xl-6">
-        <p class="today">
-          <span id="today-date">Today's Date</span>
-          <span id="today-time">Today's Time</span>
-        </p>
+    <div class="container wizard-container">
+      <div class="container image-container">
+        <div class="row row-1">
+          <img id="background-image" src="media/both.png" />
+        </div>
       </div>
-      <div class="col-xl-6">
-        <p class="place">
-          <span id="city">NULL</span><span id="country">NULL</span>
-        </p>
-        <form id="search-widget">
-          <input
-            type="search"
-            id="search-input"
-            class="form-control"
-            placeholder="Where are you today?"
-            autocomplete="off"
-          />
-          <button
-            id="search-button"
-            class="btn btn-primary btn-sm"
-            type="submit"
-          >
-            Search
-          </button>
-          <button
-            id="current-location-button"
-            class="btn btn-primary btn-sm"
-            type="button"
-          >
-            Use My Current Location
-          </button>
-        </form>
+      <div class="row row-2">
+        <div class="col">
+          <p class="place">
+            <span id="city">NULL</span><span id="country">NULL</span>
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xl-6">
-        <div class="container today-data">
-          <div id="today-temp">00</div>
+      <div class="row row-3">
+        <div class="col-md-3">
+          <p class="today">
+            <span id="today-date">Today's Date</span>
+            <span id="today-time">Today's Time</span>
+          </p>
+        </div>
+        <div class="col-md-9">
+          <form id="search-widget">
+            <input
+              type="search"
+              id="search-input"
+              class="form-control"
+              placeholder="Where are you today?"
+              autocomplete="off"
+            />
+            <button
+              id="search-button"
+              class="btn btn-primary btn-sm"
+              type="submit"
+            >
+              Search
+            </button>
+            <button
+              id="current-location-button"
+              class="btn btn-primary btn-sm"
+              type="button"
+            >
+              Use My Current Location
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="container today-data-container">
+        <div class="row row-4">
+        <div id="today-temp">00</div>
           <p class="conversion">
             <a href="#" id="celcius" class="disabled-link">°C</a>
             |
@@ -86,13 +94,10 @@
           Wind:
           <span id="wvalue"></span>
         </li>
-        <li class="title">
-          Sunset:
-          <span id="svalue"></span>
-        </li>
       </ul>
     </div>
-    <div class="row">
+      </div>
+       <div class="row">
       <div class="col-xl-8">
         <div class="card-deck" style="width: 30rem">
           <div class="card day1">
@@ -140,17 +145,20 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-2">
+    </div>
+        <div class="row">
+      <div class="col-md-3">
         <p id="credit">
           <a href="https://github.com/amichty/weather-wizard" target="_blank"
-            >Open-source code</a
-          >
-          by Alex Combot
+            >Open-source code</a> by Alex Combot
         </p>
       </div>
     </div>
   </body>
   <script src="src/index.js"></script>
 </html>
+
+  
+
+
+
