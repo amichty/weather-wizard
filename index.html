@@ -22,143 +22,136 @@
   </head>
   <body>
     <div class="container wizard-container">
-      <div class="container image-container">
+      <div class="bg-image" style="background-image: url(media/both.png)">
         <div class="row row-1">
-          <img id="background-image" src="media/both.png" />
+          <div class="col-md-12">
+            <p class="place">
+              <span id="city">City</span><span id="country">Country</span>
+            </p>
+            <form id="search-widget">
+              <input
+                type="search"
+                id="search-input"
+                class="form-control"
+                placeholder="Where are you today?"
+                autocomplete="off"
+              />
+              <button
+                id="search-button"
+                class="btn btn-primary btn-sm"
+                type="submit"
+              >
+                Search
+              </button>
+              <button
+                id="current-location-button"
+                class="btn btn-primary btn-sm"
+                type="button"
+              >
+                Use My Current Location
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="row row-2">
-        <div class="col">
-          <p class="place">
-            <span id="city">NULL</span><span id="country">NULL</span>
-          </p>
-        </div>
-      </div>
-      <div class="row row-3">
-        <div class="col-md-3">
+        <div class="row row-2">
           <p class="today">
             <span id="today-date">Today's Date</span>
             <span id="today-time">Today's Time</span>
           </p>
         </div>
-        <div class="col-md-9">
-          <form id="search-widget">
-            <input
-              type="search"
-              id="search-input"
-              class="form-control"
-              placeholder="Where are you today?"
-              autocomplete="off"
-            />
-            <button
-              id="search-button"
-              class="btn btn-primary btn-sm"
-              type="submit"
-            >
-              Search
-            </button>
-            <button
-              id="current-location-button"
-              class="btn btn-primary btn-sm"
-              type="button"
-            >
-              Use My Current Location
-            </button>
-          </form>
+        <div class="row row-3">
+          <div class="col-md-3 temp-column">
+            <p id="today-temp">00</p>
+          </div>
+          <div class="col-md-2 conversion-column">
+            <span class="conversion">
+              <a href="#" id="celcius" class="disabled-link">°C</a>
+              |
+              <a href="#" id="fahrenheit">°F</a>
+            </span>
+          </div>
+          <div class="col-md-2 icon-column">
+            <div class="today-icon">
+              <img
+                id="today-icon"
+                class="icon"
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+              />
+              <p id="today-description">Description</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="container today-data-container">
         <div class="row row-4">
-        <div id="today-temp">00</div>
-          <p class="conversion">
-            <a href="#" id="celcius" class="disabled-link">°C</a>
-            |
-            <a href="#" id="fahrenheit">°F</a>
-          </p>
-          <div class="today-icon">
-            <img
-              id="today-icon"
-              class="icon"
-              src="https://openweathermap.org/img/wn/10d@2x.png"
-            />
-            <p id="today-description">Description</p>
+          <div class="col-md-4">
+            <ul class="weather-data">
+              <li class="title">Humidity:<span id="hvalue"></span></li>
+              <li class="title">Wind:<span id="wvalue"></span></li>
+            </ul>
           </div>
         </div>
-      </div>
-      <ul class="weather-data">
-        <li class="title">
-          Humidity:
-          <span id="hvalue"></span>
-        </li>
-        <li class="title">
-          Wind:
-          <span id="wvalue"></span>
-        </li>
-      </ul>
-    </div>
-      </div>
-       <div class="row">
-      <div class="col-xl-8">
-        <div class="card-deck" style="width: 30rem">
-          <div class="card day1">
-            <div class="card-header">01/21</div>
-            <div class="card-body">
-              <h5 class="card-title">19°</h5>
-              <img
-                class="img-fluid icon"
-                id="day1-icon"
-                src="https://openweathermap.org/img/wn/10d@2x.png"
-              />
-              <p class="card-text">
-                <small class="text-muted">3 mins ago</small>
-              </p>
+        <div class="row row-5">
+          <div class="col-md-12">
+            <div class="card-deck" style="width: 30rem">
+              <div class="card day1">
+                <div class="card-header">01/21
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">19°</h5>
+                  <img
+                    class="img-fluid icon"
+                    id="day1-icon"
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                  />
+                  <p class="card-text">
+                    <small class="text-muted">3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+              <div class="card day2">
+                <div class="card-header">01/21</div>
+                <div class="card-body">
+                  <h5 class="card-title">19°</h5>
+                  <img
+                    id="day2-icon"
+                    class="img-fluid icon"
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                  />
+                  <p class="card-text">
+                    <small class="text-muted">3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+              <div class="card day3">
+                <div class="card-header">01/21</div>
+                <div class="card-body">
+                  <h5 class="card-title">19°</h5>
+                  <img
+                    id="day3-icon icon"
+                    class="img-fluid icon"
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                  />
+                  <p class="card-text">
+                    <small class="text-muted">3 mins ago</small>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card day2">
-            <div class="card-header">01/21</div>
-            <div class="card-body">
-              <h5 class="card-title">19°</h5>
-              <img
-                id="day2-icon"
-                class="img-fluid icon"
-                src="https://openweathermap.org/img/wn/10d@2x.png"
-              />
-              <p class="card-text">
-                <small class="text-muted">3 mins ago</small>
-              </p>
-            </div>
-          </div>
-          <div class="card day3">
-            <div class="card-header">01/21</div>
-            <div class="card-body">
-              <h5 class="card-title">19°</h5>
-              <img
-                id="day3-icon icon"
-                class="img-fluid icon"
-                src="https://openweathermap.org/img/wn/10d@2x.png"
-              />
-              <p class="card-text">
-                <small class="text-muted">3 mins ago</small>
-              </p>
-            </div>
           </div>
         </div>
-      </div>
-    </div>
-    </div>
-        <div class="row">
-      <div class="col-md-3">
-        <p id="credit">
-          <a href="https://github.com/amichty/weather-wizard" target="_blank"
-            >Open-source code</a> by Alex Combot
-        </p>
-      </div>
-    </div>
+        <div class="row row-5">
+          <div class="col-md-12">
+            <p id="credit">
+              <a
+                href="https://github.com/amichty/weather-wizard"
+                target="_blank"
+                >Open-source code</a
+              >
+              by Alex Combot
+            </p>
+          </div>
+        </div>
+
   </body>
   <script src="src/index.js"></script>
 </html>
-
-  
-
-
-
