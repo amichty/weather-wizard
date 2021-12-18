@@ -113,3 +113,30 @@ function convertToCel(event) {
 
 let celLink = document.querySelector("#celcius");
 celLink.addEventListener("click", convertToCel);
+
+displayForecast();
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row row-6">
+   <div class="col-md-12">
+   <div class="card-deck" style="width:35rem">`;
+  forecastElement.innerHTML = forecastHTML;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card" style="width:100px">
+          <div class="card-header">${day}
+          </div>
+          <div class="card-body">
+          <h5 class="card-title">19°</h5>
+          <img
+          class="img-fluid icon"
+          src="https://openweathermap.org/img/wn/10d@2x.png"
+          />
+          </div>
+        </div>`;
+    forecastElement.innerHTML = forecastHTML + `</div></div></div>`;
+  });
+}
