@@ -44,6 +44,12 @@ function searchEngine(event) {
   axios.get(`${apiUrl}`).then(displayCity);
 }
 
+function forecastLocation(coordinates) {
+  let apiKey = `d61c5244a5a570810637d907016c62d7`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function displayCity(response) {
   let cityName = document.querySelector("#city");
   let countryName = document.querySelector("#country");
@@ -72,6 +78,8 @@ function displayCity(response) {
   let searchField = document.querySelector("#search-input");
   searchField.value = "";
   searchField.placeholder = "Where are you today?";
+
+  forecastLocation(response.data.coord);
 }
 
 function currentPosition() {
@@ -114,23 +122,22 @@ function convertToCel(event) {
 let celLink = document.querySelector("#celcius");
 celLink.addEventListener("click", convertToCel);
 
-displayForecast();
-
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-6">
    <div class="col-md-12">
-   <div class="card-deck" style="width:35rem">`;
+   <div class="card-deck" style="width:39rem">`;
   forecastElement.innerHTML = forecastHTML;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="card" style="width:100px">
+      `<div class="card">
           <div class="card-header">${day}
           </div>
           <div class="card-body">
-          <h5 class="card-title">19°</h5>
+          <h5 class="card-title">29°/66°</h5>
           <img
           class="img-fluid icon"
           src="https://openweathermap.org/img/wn/10d@2x.png"
