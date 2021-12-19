@@ -92,7 +92,7 @@ function displayForecastDefault() {
           <div class="card-header">${day}
           </div>
           <div class="card-body">
-          <h5 class="card-title">29°/66°</h5>
+          <h5 class="card-title">00° 00°</h5>
           <img
           class="img-fluid icon"
           src="https://openweathermap.org/img/wn/10d@2x.png"
