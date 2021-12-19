@@ -44,12 +44,6 @@ function searchEngine(event) {
   axios.get(`${apiUrl}`).then(displayCity);
 }
 
-function forecastLocation(coordinates) {
-  let apiKey = `d61c5244a5a570810637d907016c62d7`;
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiURL).then(displayForecast);
-}
-
 function displayCity(response) {
   let cityName = document.querySelector("#city");
   let countryName = document.querySelector("#country");
@@ -80,6 +74,81 @@ function displayCity(response) {
   searchField.placeholder = "Where are you today?";
 
   forecastLocation(response.data.coord);
+}
+
+displayForecastDefault();
+
+function displayForecastDefault() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row row-6">
+   <div class="col-md-12">
+   <div class="card-deck" style="width:40rem">`;
+  forecastElement.innerHTML = forecastHTML;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card">
+          <div class="card-header">${day}
+          </div>
+          <div class="card-body">
+          <h5 class="card-title">29°/66°</h5>
+          <img
+          class="img-fluid icon"
+          src="https://openweathermap.org/img/wn/10d@2x.png"
+          />
+          </div>
+        </div>`;
+    forecastElement.innerHTML = forecastHTML + `</div></div></div>`;
+  });
+}
+
+function forecastLocation(coordinates) {
+  let apiKey = `d61c5244a5a570810637d907016c62d7`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecastReal);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecastReal(response) {
+  let forecastData = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row row-6">
+   <div class="col-md-12">
+   <div class="card-deck" style="width:40rem">`;
+  forecastElement.innerHTML = forecastHTML;
+
+  forecastData.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="card">
+          <div class="card-header">${formatDay(forecastDay.dt)}
+          </div>
+          <div class="card-body">
+          <h5 class="card-title">
+          <strong class="temp-max">${Math.round(forecastDay.temp.max)}°</strong>
+          <span class="temp-min">${Math.round(forecastDay.temp.min)}°</span>
+          </h5>
+          <img
+          class="img-fluid icon"
+          src="https://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          />
+          </div>
+        </div>`;
+      forecastElement.innerHTML = forecastHTML + `</div></div></div>`;
+    }
+  });
 }
 
 function currentPosition() {
@@ -121,29 +190,3 @@ function convertToCel(event) {
 
 let celLink = document.querySelector("#celcius");
 celLink.addEventListener("click", convertToCel);
-
-function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row row-6">
-   <div class="col-md-12">
-   <div class="card-deck" style="width:39rem">`;
-  forecastElement.innerHTML = forecastHTML;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="card">
-          <div class="card-header">${day}
-          </div>
-          <div class="card-body">
-          <h5 class="card-title">29°/66°</h5>
-          <img
-          class="img-fluid icon"
-          src="https://openweathermap.org/img/wn/10d@2x.png"
-          />
-          </div>
-        </div>`;
-    forecastElement.innerHTML = forecastHTML + `</div></div></div>`;
-  });
-}
