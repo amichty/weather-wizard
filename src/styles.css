@@ -68,18 +68,12 @@ p.place {
   margin-bottom: -15px;
 }
 
-.temp-column {
-  margin-right: -15px;
-  margin-left: 20px;
-}
-
-.conversion-column {
-  margin-left: -15px;
-  margin-right: -70px;
+.row-3 {
+  margin-left: 100px;
 }
 
 #today-temp {
-  float: right;
+  float: left;
   margin-top: -15px;
   text-align: right;
   font-size: 60pt;
@@ -89,24 +83,18 @@ p.place {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.conversion {
+#celcius {
+  margin-right: 40px;
   padding-top: 10px;
-  float: left;
+  float: right;
   font-size: 16pt;
 }
 
-#divider {
-  color: #488a8b;
-}
-
-.today-icon {
-  float: left;
-}
 #today-icon {
+  float: left;
   width: 100px;
   height: 100px;
   margin-top: -15px;
-  padding: -15px;
 }
 
 .today-icon p {
@@ -178,6 +166,10 @@ p.place {
   color: #488a8b;
 }
 
+a {
+  color: #488a8b;
+}
+
 #credit {
   bottom: 0;
   text-align: center;
@@ -188,14 +180,4 @@ p.place {
 
 a#credit:hover {
   cursor: pointer;
-}
-
-.disabled-link {
-  color: black;
-  cursor: default;
-}
-
-.disabled-link:hover {
-  text-decoration: none;
-  color: black;
 }

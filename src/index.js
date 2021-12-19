@@ -65,7 +65,7 @@ function displayCity(response) {
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
   countryName.innerHTML = `\xa0` + regionNames.of(`${country}`);
   todayIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-  windValue.innerHTML = " " + `${wind}mph`;
+  windValue.innerHTML = " " + `${wind} mps`;
   humidityValue.innerHTML = " " + `${humidity}%`;
   descriptionValue.innerHTML = `${description}`;
 
@@ -168,25 +168,3 @@ function showPosition(position) {
 
   axios.get(`${apiURL}`).then(displayCity);
 }
-
-function convertToFa(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#today-temp");
-  temp.innerHTML = Math.round((Math.round(`${temp.innerHTML}`) * 9) / 5 + 32);
-  faLink.classList.add("disabled-link");
-  celLink.classList.remove("disabled-link");
-}
-
-let faLink = document.querySelector("#fahrenheit");
-faLink.addEventListener("click", convertToFa);
-
-function convertToCel(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#today-temp");
-  temp.innerHTML = Math.round((Math.round(`${temp.innerHTML}`) - 32) * (5 / 9));
-  celLink.classList.add("disabled-link");
-  faLink.classList.remove("disabled-link");
-}
-
-let celLink = document.querySelector("#celcius");
-celLink.addEventListener("click", convertToCel);
